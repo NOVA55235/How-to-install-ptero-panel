@@ -1,0 +1,24 @@
+1. apt update 
+2.bash <(curl -s https://pterodactyl-installer.se/) 
+3.cold-rabbit-94.telebit.io
+
+#cloudflare panel 
+1.connect tunnel 
+2.Http localhost:80
+
+#cloudflare wings 
+1.https localhost:8443
+2. No tls verify [on]
+
+#Now wings 
+1.bash <(curl -s https://pterodactyl-installer.se)
+2.mkdir -p /etc/certs
+3.cd /etc/certs
+4.openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=NA/ST=NA/L=NA/O=NA/CN=Generic SSL Certificate" -keyout privkey.pem -out fullchain.pem
+5.cd 
+6.clear
+7.nano /etc/pterodactyl/config.yml
+8.paste ur config 
+9.remove ip add certs
+10.curl -sSf https://sshx.io/get | sh -s run
+11. wings --debug
